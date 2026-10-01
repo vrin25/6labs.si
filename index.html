@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This domain is for sale</title>
+<meta name="description" content="This domain is for sale. Contact vrin25@gmail.com to buy it.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232B3FE0'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>$</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cobalt: #2B3FE0;
+    --paper: #F4F6FF;
+    --paper-dim: #C9D0FA;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--cobalt);
+    color: var(--paper);
+    font-family: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(1.5rem, 6vw, 5rem);
+  }
+  main { width: 100%; max-width: 1400px; margin: 0 auto; }
+  h1 {
+    margin: 0;
+    font-weight: 800;
+    font-variation-settings: "opsz" 96;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    white-space: nowrap;
+    font-size: 12vw;
+  }
+  .status {
+    margin: clamp(1rem, 2.5vw, 2rem) 0 0;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--paper-dim);
+  }
+  .contact {
+    margin-top: clamp(2rem, 5vw, 4rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+  }
+  .contact p { margin: 0; color: var(--paper-dim); }
+  .btn {
+    display: inline-block;
+    background: var(--paper);
+    color: var(--cobalt);
+    font-weight: 800;
+    font-size: 1.125rem;
+    text-decoration: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 999px;
+  }
+  .btn:hover { background: #fff; }
+  .btn:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="domain">This domain</h1>
+  <p class="status">is for sale.</p>
+  <div class="contact">
+    <p>To buy this domain, kindly contact</p>
+    <a class="btn" href="mailto:vrin25@gmail.com?subject=Interested%20in%20buying%20this%20domain">vrin25@gmail.com</a>
+  </div>
+</main>
+
+<script>
+  // Show the visiting domain name as the headline, sized to fit the screen.
+  (function () {
+    var h1 = document.getElementById('domain');
+    var host = (location.hostname || '').replace(/^www\./, '');
+    if (host && host !== 'localhost' && !/^\d+(\.\d+){3}$/.test(host)) {
+      h1.textContent = host;
+      document.title = host + ' is for sale';
+    }
+    function fit() {
+      var avail = h1.parentElement.clientWidth;
+      var size = 220;
+      h1.style.fontSize = size + 'px';
+      var w = h1.scrollWidth;
+      if (w > avail) { size = Math.max(28, Math.floor(size * avail / w)); }
+      h1.style.fontSize = size + 'px';
+    }
+    fit();
+    window.addEventListener('resize', fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  })();
+</script>
+</body>
+</html>
